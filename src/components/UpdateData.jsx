@@ -1,19 +1,20 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React from 'react'
+import { useParams, useLocation } from 'react-router-dom'
 
 const UpdateData = ({ catData }) => {
-  const { id } = useParams();
-  console.log({ catData });
+  const location = useLocation()
+  const object = location.state
+  // const { id } = useParams();
+  // console.log({ catData });
   return (
     <div className="contaner">
-      <h1 style={{ textAlign: "center" }}>
-        This is The <strong>{catData[id]?.breed}</strong> breed Update
-        nformation
+      <h1 style={{ textAlign: 'center' }}>
+        This is The <strong>{object.breed}</strong> breed Update nformation
       </h1>
       <form>
         <table
           class="table container table-striped"
-          style={{ textAlign: "center" }}
+          style={{ textAlign: 'center' }}
         >
           <thead>
             <tr>
@@ -29,35 +30,35 @@ const UpdateData = ({ catData }) => {
               <th>
                 <input
                   type="text"
-                  value={catData[id]?.breed}
+                  value={object.breed}
                   className="form-control"
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  value={catData[id]?.coat}
+                  value={object.coat}
                   className="form-control"
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  value={catData[id]?.country}
+                  value={object.country}
                   className="form-control"
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  value={catData[id]?.origin}
+                  value={object.origin}
                   className="form-control"
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  value={catData[id]?.pattern}
+                  value={object.pattern}
                   className="form-control"
                 />
               </th>
@@ -73,7 +74,7 @@ const UpdateData = ({ catData }) => {
         </table>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default UpdateData;
+export default UpdateData

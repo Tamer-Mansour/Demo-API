@@ -13,6 +13,7 @@ const BasicTableStyles = {
     "&:hover": {
       backgroundColor: "gray",
       opacity: [0.9, 0.8, 0.7],
+      
     },
   },
 };

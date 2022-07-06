@@ -1,33 +1,33 @@
-import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import "./BasicTable.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import BasicTableStyles from "./BasicTable.css.js";
-import { Link } from "react-router-dom";
+import * as React from 'react'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import './BasicTable.css'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import BasicTableStyles from './BasicTable.css.js'
+import { Link } from 'react-router-dom'
 
 const BasicTable = () => {
-  const [catData, setCatData] = useState([]);
-  console.log('hello', catData[0]);
+  const [catData, setCatData] = useState([])
+  console.log('hello', catData[0])
 
   const fetchData = async () => {
     try {
-      const response = await axios(`https://catfact.ninja/breeds`);
+      const response = await axios(`https://catfact.ninja/breeds`)
       // console.log(response.data.data);
-      setCatData(response.data.data);
+      setCatData(response.data.data)
     } catch (error) {
-      alert(error);
-      console.log(error.response);
+      alert(error)
+      console.log(error.response)
     }
-  };
+  }
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   // viewCat(id) {
 
@@ -93,7 +93,7 @@ const BasicTable = () => {
                 catData.map((row, index) => (
                   <TableRow
                     key={index}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell
                       component="th"
@@ -136,10 +136,19 @@ const BasicTable = () => {
                       className="dataColom"
                       sx={BasicTableStyles.td}
                     >
-                      <Link to={`/BasicTable/update/${index}`}className="btn btn-info">
+                      <Link
+                        to={`/BasicTable/update/${index}`}
+                        state={catData[index]}
+                        className="btn btn-info"
+                      >
                         Update
                       </Link>
-                      <Link to={`/BasicTable/view/${index}`} className="btn btn-info">
+                      <Link
+                        to={`/BasicTable/view/${index}`}
+                        state={catData[index]}
+                        onClick={() => {}}
+                        className="btn btn-info"
+                      >
                         View
                       </Link>
                     </TableCell>
@@ -150,6 +159,6 @@ const BasicTable = () => {
         </TableContainer>
       </div>
     </>
-  );
-};
-export default BasicTable;
+  )
+}
+export default BasicTable
