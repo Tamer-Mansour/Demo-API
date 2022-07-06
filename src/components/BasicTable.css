@@ -1,8 +1,7 @@
-.strong {
-    color: grey;
-    font-size: 28px;
-    font-family: serif;
-}
-.table{
-    background-color: darkgray;
-}
+/* tr:nth-child(even) {
+    background-color: rgb(197, 197, 197);
+} */
+
+/* tr:hover {
+    background-color: rgb(151, 151, 151);
+} */

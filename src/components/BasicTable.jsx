@@ -5,12 +5,10 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-
 import "./BasicTable.css";
-
 import { useEffect, useState } from "react";
 import axios from "axios";
+import BasicTableStyles from "./BasicTable.css.js";
 
 export default function BasicTable() {
   const [catData, setCatData] = useState([]);
@@ -32,22 +30,39 @@ export default function BasicTable() {
   return (
     <div className="containTable">
       <TableContainer>
-        <Table className="table">
+        {/* table-striped */}
+        <Table className="table table-striped" sx={BasicTableStyles.table}>
           <TableHead>
             <TableRow>
-              <TableCell align="lift" className="strong">
+              <TableCell sx={BasicTableStyles.strong} align="lift" className="">
                 breed
               </TableCell>
-              <TableCell align="lift" className="strong">
+              <TableCell
+                align="lift"
+                className="strong"
+                sx={BasicTableStyles.strong}
+              >
                 coat
               </TableCell>
-              <TableCell align="lift" className="strong">
+              <TableCell
+                align="lift"
+                className="strong"
+                sx={BasicTableStyles.strong}
+              >
                 country
               </TableCell>
-              <TableCell align="lift" className="strong">
+              <TableCell
+                align="lift"
+                className="strong"
+                sx={BasicTableStyles.strong}
+              >
                 origin
               </TableCell>
-              <TableCell align="lift" className="strong">
+              <TableCell
+                align="lift"
+                className="strong"
+                sx={BasicTableStyles.strong}
+              >
                 pattern
               </TableCell>
             </TableRow>
@@ -56,13 +71,41 @@ export default function BasicTable() {
             {catData.length > 0 &&
               catData.map((row, index) => (
                 <TableRow key={index}>
-                  <TableCell component="th" scope="row">
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    sx={BasicTableStyles.td}
+                  >
                     {row.breed}
                   </TableCell>
-                  <TableCell align="lift">{row.coat}</TableCell>
-                  <TableCell align="lift">{row.country}</TableCell>
-                  <TableCell align="lift">{row.origin}</TableCell>
-                  <TableCell align="lift">{row.pattern}</TableCell>
+                  <TableCell
+                    align="lift"
+                    className="dataColom"
+                    sx={BasicTableStyles.td}
+                  >
+                    {row.coat}
+                  </TableCell>
+                  <TableCell
+                    align="lift"
+                    className="dataColom"
+                    sx={BasicTableStyles.td}
+                  >
+                    {row.country}
+                  </TableCell>
+                  <TableCell
+                    align="lift"
+                    className="dataColom"
+                    sx={BasicTableStyles.td}
+                  >
+                    {row.origin}
+                  </TableCell>
+                  <TableCell
+                    align="lift"
+                    className="dataColom"
+                    sx={BasicTableStyles.td}
+                  >
+                    {row.pattern}
+                  </TableCell>
                 </TableRow>
               ))}
           </TableBody>
