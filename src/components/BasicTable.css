@@ -5,3 +5,9 @@
 /* tr:hover {
     background-color: rgb(151, 151, 151);
 } */
+.containTable{
+    width: 70%;
+    padding-left: 20px;
+    text-align:center ;
+    
+}

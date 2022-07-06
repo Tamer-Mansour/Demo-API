@@ -6,7 +6,9 @@ const BasicTableStyles = {
   },
   table: {
     backgroundColor: "rgb(250, 250, 255)",
+    minWidth: 650,
   },
+  containTable: {},
   td: {
     "&:hover": {
       backgroundColor: "gray",
