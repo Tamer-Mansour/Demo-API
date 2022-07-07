@@ -155,7 +155,7 @@ function DashboardContent() {
                     <Toolbar/>
                     {/*Body of this Page*/}
                     <Container maxWidth="lg" sx={{mt: 6, mb: 4}}>
-                        <Grid container spacing={3}>
+                        <Grid container spacing={3} justifyContent="center">
                             <AppRouter/>
                         </Grid>
                         <Copyright sx={{pt: 4}}/>

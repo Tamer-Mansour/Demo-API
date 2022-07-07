@@ -27,15 +27,13 @@ const AppRouter = () => {
     }, []);
     return (
         <>
-            <switch>
-                <Router>
-                    <Routes>
-                        <Route exact path="/" element={<ListData/>}/>
-                        <Route exact path="/update/:id" element={<UpdateOne catData={catData}/>}/>
-                        <Route exact path="/view/:id" element={<ListOne catData={catData}/>}/>
-                    </Routes>
-                </Router>
-            </switch>
+            <Router>
+                <Routes>
+                    <Route exact path="/" element={<ListData/>}/>
+                    <Route exact path="/update/:id" element={<UpdateOne catData={catData}/>}/>
+                    <Route exact path="/view/:id" element={<ListOne catData={catData}/>}/>
+                </Routes>
+            </Router>
         </>
     );
 };

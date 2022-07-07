@@ -8,12 +8,12 @@ import TableCell from "@mui/material/TableCell";
 import TableBody from "@mui/material/TableBody";
 import {Grid} from "@mui/material";
 
-const ListOne = () => {
+const ListOne = ({catData}) => {
     const location = useLocation();
     const object = location.state;
     return (
         <div>
-            <h1>This the data of {object.breed}</h1>
+            <h1>This the data of {object?.breed}</h1>
             <Grid item xs={12}>
                 <Paper sx={{p: 2, display: 'flex', flexDirection: 'column'}}>
                     <Table size="small">
@@ -28,11 +28,11 @@ const ListOne = () => {
                         </TableHead>
                         <TableBody>
                             <TableRow>
-                                <TableCell>{object.breed}</TableCell>
-                                <TableCell>{object.coat}</TableCell>
-                                <TableCell>{object.country}</TableCell>
-                                <TableCell>{object.origin}</TableCell>
-                                <TableCell>{object.pattern}</TableCell>
+                                <TableCell>{object?.breed}</TableCell>
+                                <TableCell>{object?.coat}</TableCell>
+                                <TableCell>{object?.country}</TableCell>
+                                <TableCell>{object?.origin}</TableCell>
+                                <TableCell>{object?.pattern}</TableCell>
                             </TableRow>
                         </TableBody>
                     </Table>

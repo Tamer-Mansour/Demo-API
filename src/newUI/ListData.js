@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
+import {Link} from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -86,14 +86,14 @@ export default function ListData() {
                                             align="lift"
                                             className="dataColom"
                                         >
-                                            <Link href={`/update/${index}`}>
+                                            <Link to={`/update/${index}`} state={catData[index]}>
                                                 <ListItemButton>
                                                     <ListItemIcon>
                                                         <ReplayIcon style={{color: "red"}}/>
                                                     </ListItemIcon>
                                                 </ListItemButton>
                                             </Link>
-                                            <Link href={`/view/${index}`}>
+                                            <Link to={`/view/${index}`} state={catData[index]}>
                                                 <ListItemButton>
                                                     <ListItemIcon>
                                                         <RemoveRedEyeIcon style={{color: "green"}}/>
