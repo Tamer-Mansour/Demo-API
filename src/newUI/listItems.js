@@ -8,38 +8,43 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import InfoIcon from '@mui/icons-material/Info';
 import Link from '@mui/material/Link';
 
 
 export const mainListItems = (
     <>
-        <Link style={{textDecoration: 'none', color: ''}} href="/home">
+        {/*Home*/}
+        {/*<Link style={{textDecoration: 'none', color: ''}} href="/">*/}
             <ListItemButton>
-            <ListItemIcon>
-                <HomeIcon/>
-            </ListItemIcon>
-            <ListItemText primary="Home"/>
-        </ListItemButton>
-        </Link>
+                <ListItemIcon>
+                    <HomeIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Home"/>
+            </ListItemButton>
+        {/*</Link>*/}
+        {/*data*/}
         <ListItemButton>
             <ListItemIcon>
-                <ShoppingCartIcon/>
+                <InfoIcon/>
             </ListItemIcon>
-            <ListItemText primary="Orders"/>
+            <ListItemText primary="Data"/>
         </ListItemButton>
+        {/*Customers*/}
         <ListItemButton>
             <ListItemIcon>
                 <PeopleIcon/>
             </ListItemIcon>
             <ListItemText primary="Customers"/>
         </ListItemButton>
+        {/*Reports*/}
         <ListItemButton>
             <ListItemIcon>
                 <BarChartIcon/>
             </ListItemIcon>
             <ListItemText primary="Reports"/>
         </ListItemButton>
+        {/*Integrations*/}
         <ListItemButton>
             <ListItemIcon>
                 <LayersIcon/>
@@ -56,21 +61,10 @@ export const secondaryListItems = (
         </ListSubheader>
         <ListItemButton>
             <ListItemIcon>
-                <AssignmentIcon/>
+                <HomeIcon/>
             </ListItemIcon>
-            <ListItemText primary="Current month"/>
+            <ListItemText primary="Home"/>
         </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon/>
-            </ListItemIcon>
-            <ListItemText primary="Last quarter"/>
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon/>
-            </ListItemIcon>
-            <ListItemText primary="Year-end sale"/>
-        </ListItemButton>
+
     </>
 );

@@ -7,13 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import ReplayIcon from '@mui/icons-material/Replay';
-import Title from './Title';
 import {useEffect, useState} from "react";
 import axios from "axios";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import HomeIcon from "@mui/icons-material/Home";
-import ListItemText from "@mui/material/ListItemText";
 import {Grid} from "@mui/material";
 import Paper from "@mui/material/Paper";
 
@@ -37,7 +34,7 @@ export default function ListData() {
         <>
             <Grid item xs={12}>
                 <Paper sx={{p: 2, display: 'flex', flexDirection: 'column'}}>
-                    <Title>Recent Orders</Title>
+                    <h1>Fetched Data</h1>
                     <Table size="small">
                         <TableHead>
                             <TableRow>
@@ -89,14 +86,14 @@ export default function ListData() {
                                             align="lift"
                                             className="dataColom"
                                         >
-                                            <Link href={`/BasicTable/update/${index}`}>
+                                            <Link href={`/update/${index}`}>
                                                 <ListItemButton>
                                                     <ListItemIcon>
                                                         <ReplayIcon style={{color: "red"}}/>
                                                     </ListItemIcon>
                                                 </ListItemButton>
                                             </Link>
-                                            <Link href={`/BasicTable/view/${index}`}>
+                                            <Link href={`/view/${index}`}>
                                                 <ListItemButton>
                                                     <ListItemIcon>
                                                         <RemoveRedEyeIcon style={{color: "green"}}/>
