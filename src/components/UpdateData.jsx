@@ -1,80 +1,58 @@
 import React from 'react'
-import { useParams, useLocation } from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
+import {useState} from "react";
 
-const UpdateData = ({ catData }) => {
-  const location = useLocation()
-  const object = location.state
-  // const { id } = useParams();
-  // console.log({ catData });
-  return (
-    <div className="contaner">
-      <h1 style={{ textAlign: 'center' }}>
-        This is The <strong>{object.breed}</strong> breed Update nformation
-      </h1>
-      <form>
-        <table
-          class="table container table-striped"
-          style={{ textAlign: 'center' }}
-        >
-          <thead>
-            <tr>
-              <th scope="col">breed</th>
-              <th scope="col">coat</th>
-              <th scope="col">country</th>
-              <th scope="col">origin</th>
-              <th scope="col">pattern</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>
-                <input
-                  type="text"
-                  value={object.breed}
-                  className="form-control"
-                />
-              </th>
-              <th>
-                <input
-                  type="text"
-                  value={object.coat}
-                  className="form-control"
-                />
-              </th>
-              <th>
-                <input
-                  type="text"
-                  value={object.country}
-                  className="form-control"
-                />
-              </th>
-              <th>
-                <input
-                  type="text"
-                  value={object.origin}
-                  className="form-control"
-                />
-              </th>
-              <th>
-                <input
-                  type="text"
-                  value={object.pattern}
-                  className="form-control"
-                />
-              </th>
-              <th>
-                <input
-                  type="submit"
-                  value="UPDATE"
-                  className="btn btn-success"
-                />
-              </th>
-            </tr>
-          </tbody>
-        </table>
-      </form>
-    </div>
-  )
+
+import {Grid, TextField, Button, Card, CardContent, Typography} from '@mui/material';
+
+const UpdateData = ({catData}) => {
+    const location = useLocation()
+    const object = location.state
+
+    return (
+        <div className="App">
+            <Typography gutterBottom variant="h3" align="center">
+                Update Page
+            </Typography>
+            <Grid>
+                {/*<Card style={{maxWidth: 450, padding: "20px 5px", margin: "0 auto"}}>*/}
+                {/*    <CardContent>*/}
+                <form>
+                    <Grid container spacing={1}>
+
+                        <TextField placeholder={object.breed} label="Breed"
+                                   variant="outlined" fullWidth
+                                   required/>
+
+                        <TextField placeholder={object.coat} label="Coat"
+                                   variant="outlined" fullWidth
+                                   required/>
+
+                        <TextField placeholder={object.country} label="Country"
+                                   variant="outlined" fullWidth
+                                   required/>
+
+
+                        <TextField placeholder={object.origin} label="Origin"
+                                   variant="outlined"
+                                   fullWidth required/>
+
+
+                        <TextField label="Pattern" rows={4} placeholder={object.pattern}
+                                   variant="outlined" fullWidth required/>
+
+
+                        <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
+
+
+                    </Grid>
+                </form>
+                {/*    </CardContent>*/}
+                {/*</Card>*/}
+            </Grid>
+            {/*<h1>{formValue}</h1>*/}
+        </div>
+    );
 }
 
 export default UpdateData
