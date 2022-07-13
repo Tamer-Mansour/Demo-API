@@ -9,6 +9,7 @@ import axios from "axios";
 import ListData from "./ListData";
 import ListOne from "./ListOne";
 import UpdateOne from "./UpdateOne";
+import PageNotFound from "./PageNotFound";
 
 const AppRouter = () => {
 
@@ -32,6 +33,7 @@ const AppRouter = () => {
                     <Route exact path="/" element={<ListData/>}/>
                     <Route exact path="/update/:id" element={<UpdateOne catData={catData}/>}/>
                     <Route exact path="/view/:id" element={<ListOne catData={catData}/>}/>
+                    <Route exact path="*" element={<PageNotFound/>}/>
                 </Routes>
             </Router>
         </>

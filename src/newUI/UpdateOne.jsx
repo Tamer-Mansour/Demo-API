@@ -32,7 +32,6 @@ const UpdateOne = ({catData}) => {
                             } else if (!values.pattern) {
                                 errors.pattern = 'Required';
                             }
-
                             return errors;
                         }}
                         onSubmit={(values, {setSubmitting}) => {
@@ -135,27 +134,6 @@ const UpdateOne = ({catData}) => {
                                 <Button type="submit" disabled={isSubmitting} variant="outlined">Submit</Button>
                             </div>
                         </form>)}
-
-
-                        {/*<form>*/}
-                        {/*    <Grid container spacing={1}>*/}
-                        {/*        <TextField placeholder={object?.breed} label="Breed"*/}
-                        {/*                   variant="outlined" fullWidth*/}
-                        {/*                   required/>*/}
-                        {/*        <TextField placeholder={object?.coat} label="Coat"*/}
-                        {/*                   variant="outlined" fullWidth*/}
-                        {/*                   required/>*/}
-                        {/*        <TextField placeholder={object?.country} label="Country"*/}
-                        {/*                   variant="outlined" fullWidth*/}
-                        {/*                   required/>*/}
-                        {/*        <TextField placeholder={object?.origin} label="Origin"*/}
-                        {/*                   variant="outlined"*/}
-                        {/*                   fullWidth required/>*/}
-                        {/*        <TextField label="Pattern" rows={4} placeholder={object?.pattern}*/}
-                        {/*                   variant="outlined" fullWidth required/>*/}
-                        {/*        <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>*/}
-                        {/*    </Grid>*/}
-                        {/*</form>*/}
                     </Formik>
                 </Grid>
             </div>

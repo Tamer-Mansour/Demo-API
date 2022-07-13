@@ -20,7 +20,6 @@ const BasicTable = () => {
     const fetchData = async () => {
         try {
             const response = await axios(URL)
-            // console.log(response.data.data);
             setCatData(response.data.data)
         } catch (error) {
             alert(error)
